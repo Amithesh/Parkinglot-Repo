@@ -19,10 +19,11 @@ public class ParkingLotClient {
 	
 	public static void main(String[] args) throws IOException {
 		parkingLotService  = new ParkingLotService();
+		System.out.println(args[0]);
 		if(args.length == 0){
 			interactiveMethod();
 		}
-		else if(args.length == 3){
+		else if(args.length == 1){
 			inputFileMethod(args);
 		}
 	}
@@ -40,21 +41,10 @@ public class ParkingLotClient {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new FileReader(args[0]));
 		String input;
-		
-		File file = new File(args[2]);
-		if (!file.exists()) {
-			file.createNewFile();
-		}
-		
-		FileWriter fw = new FileWriter(file.getAbsoluteFile());
-		BufferedWriter bw = new BufferedWriter(fw);
-		
 		while ((input = br.readLine()) != null) {
-			bw.write(execute(input));
-			bw.write("\n\n");
+			System.out.println(execute(input)+"\n");
 		}
 		br.close();
-		bw.close();
 	}
 	
 	private static String execute(String input) {

@@ -3,7 +3,6 @@ package com.test.parkinglot.service;
 import com.test.parkinglot.model.ParkingLot;
 import com.test.parkinglot.model.ParkingSlot;
 import com.test.parkinglot.model.Vehicle;
-import com.test.parkinglot.utils.Utils;
 
 import java.util.Iterator;
 import java.util.List;
